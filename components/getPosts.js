@@ -1,5 +1,5 @@
 import Airtable from "airtable";
-
+require("dotenv").config();
 
 const AirtableBase = new Airtable({ apiKey: process.env.API_KEY  });
 const AirtableBase_ = AirtableBase.base(process.env.API_BASE);
