@@ -4,7 +4,7 @@ const AirtableBase = new Airtable({ apiKey: "keylchnrLjIMWqbQj" });
 const AirtableBase_ = AirtableBase.base("appTWrCynChvivv6E");
 
 const table = AirtableBase_.table("myblog");
-const posts =[]
+let posts =[]
 
 
 const getPosts = async () => {

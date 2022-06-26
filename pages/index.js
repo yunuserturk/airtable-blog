@@ -2,12 +2,18 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import getPosts from "../components/getPosts";
+import { marked } from "marked";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
 
+  const getPosts_ = async () => {
+    const posts = await getPosts();
+    setPosts(posts);
+  }
+
   useEffect(() => {
-    getPosts().then(posts => setPosts(posts));
+    getPosts_();
   }, []); 
 
   return (
@@ -27,7 +33,9 @@ export default function Home() {
               return (
                 <div className="flex flex-col p-5 rounded-lg border-2 border-gray-200 mt-10" key={post.id}>
                   <h2 className="text-xl font-bold">{post.title}</h2>
-                  <p>{post.content}</p>
+                  <div dangerouslySetInnerHTML={
+                    {__html: marked(post.content)}
+                    }></div>
                   <span className="text-sm">{post.date}</span>
                 </div>
               );
