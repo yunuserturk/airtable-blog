@@ -36,7 +36,9 @@ export default function Home() {
                   <div dangerouslySetInnerHTML={
                     {__html: marked(post.content)}
                     }></div>
-                  <span className="text-sm">{post.date}</span>
+                  <span className="text-sm mb-6">{post.date}</span>
+                  <a href={`/${post.id}`} class=" text-center w-36 py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-50 focus:outline-none bg-gray-600 rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-20">Read More</a>
+
                 </div>
               );
             })

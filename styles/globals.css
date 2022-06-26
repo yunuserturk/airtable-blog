@@ -18,3 +18,11 @@ a {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  a {
+    color: white;
+    background-color: black;
+    text-decoration: none;
+  }
+}
