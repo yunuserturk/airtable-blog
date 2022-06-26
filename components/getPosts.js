@@ -1,7 +1,8 @@
 import Airtable from "airtable";
 
-const AirtableBase = new Airtable({ apiKey: "keylchnrLjIMWqbQj" });
-const AirtableBase_ = AirtableBase.base("appTWrCynChvivv6E");
+
+const AirtableBase = new Airtable({ apiKey: process.env.API_KEY  });
+const AirtableBase_ = AirtableBase.base(process.env.API_BASE);
 
 const table = AirtableBase_.table("myblog");
 let posts =[]
