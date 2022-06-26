@@ -1,7 +1,7 @@
 import Airtable from "airtable";
 
-const AirtableBase = new Airtable({ apiKey: process.env.REACT_APP_API_KEY  });
-const AirtableBase_ = AirtableBase.base(process.env.REACT_APP_API_BASE);
+const AirtableBase = new Airtable({ apiKey: process.env.NEXT_PUBLIC_API_KEY  });
+const AirtableBase_ = AirtableBase.base(process.env.NEXT_PUBLIC_API_BASE);
 
 const table = AirtableBase_.table("myblog");
 let posts =[]
