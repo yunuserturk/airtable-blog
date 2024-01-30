@@ -3,7 +3,6 @@ import getPosts from "../components/getPosts";
 import { marked } from "marked";
 
 export default function post({ post }) {
-  console.log(post);
   return (
     <main>
       <div className="container mx-auto w-full sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-6/12 p-4">
